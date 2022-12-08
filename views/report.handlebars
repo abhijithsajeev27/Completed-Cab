@@ -1,0 +1,64 @@
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+    integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+  </script>
+<h1 class="text-center">Trip Report</h1>
+<div class="container">
+
+
+{{!-- Adding calender --}}
+<div class="container">
+    >
+    <div class="row">
+        <div class="col-sm-6 offset-sm-3">
+            <form method="post">
+                <div>
+                    <label for="bookingdate">Booking date</label>
+                    <input type="date" name="bookingdate" id="bookingdate" class="form-control">
+                </div>
+                <div class="d-grid mt-4">
+                    <button class="btn btn-primary">Save</button>
+                </div>
+                  </form>
+        </div>
+    </div>
+</div>
+{{!-- Ends here --}}
+
+    
+    <table class="table table-striped mt-4">
+        <tr>
+            <th>Id</th>
+            <th>Source</th>
+            <th>Destination</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Mode</th>
+            <th>Booking Date</th>
+            <th>Passenger ID</th>
+             
+        </tr>
+        {{#each data}}
+        <tr>
+            <td>{{this.dataValues.id}}</td>
+            <td>{{this.dataValues.source}}</td>
+            <td>{{this.dataValues.destination}}</td>
+            <td>{{this.dataValues.date}}</td>
+            <td>{{this.dataValues.time}}</td>
+            <td>{{this.dataValues.mode}}</td>
+            <td>{{this.dataValues.bookingdate}}</td>
+            <td>{{this.dataValues.PassengerId}}</td>
+            <td>
+                <a href="http://localhost/trip/update/{{this.dataValues.id}}">Edit</a> |
+                <a href="http://localhost/trip/delete/{{this.dataValues.id}}" class="text-danger" onclick="return confirm('Are you sure you want to delete this')">Delete</a>
+            </td>
+        </tr>
+        {{/each}}
+    </table>
+</div>

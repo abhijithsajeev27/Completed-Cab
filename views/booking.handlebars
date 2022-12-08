@@ -1,0 +1,48 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+    integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+  </script>
+
+<div class="container">
+    <h1 class="text-center">Book a ride</h1>
+    <div class="row">
+        <div class="col-sm-6 offset-sm-3">
+            <form method="post">
+                <div>
+                    <label for="source">Enter Pick-up location</label>
+                    <input type="text" name="source" id="source" class="form-control">
+                </div>
+                <div>
+                    <label for="destination">Enter drop location</label>
+                    <input type="text" name="destination" id="destination" class="form-control">
+                </div>
+                <div>
+                    <label for="date">Date</label>
+                    <input type="date" name="date" id="date" class="form-control">
+                </div>
+                <div>
+                    <label for="time">Time</label>
+                    <input type="time" name="time" id="time" class="form-control">
+                </div>
+                <div>
+                    <label for="mode">Choose a Mode:</label>
+
+                    <select name="mode" id="mode">
+                    <option value="Solo">Solo</option>
+                    <option value="Shared">Shared</option>
+                    <option value="Long-Ride">Long-Ride</option>
+                    <option value="Auto">Audi</option>
+                    </select>
+                </div>
+                <div class="d-grid mt-4">
+                    <button class="btn btn-primary">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

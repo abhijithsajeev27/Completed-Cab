@@ -1,0 +1,142 @@
+*{
+    margin:0;
+}
+h1{
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 350%;
+    text-align: center;
+    color: white;
+
+}
+
+
+
+h2{
+    font-family: 'Dancing Script', cursive;
+    font-size: 120%;
+    text-align: center;
+    color: white;
+
+
+}
+
+body{
+    background-size: cover;
+    background-color: #3F4E4F;
+    overflow-x: hidden;
+}
+.containter{
+    text-align: center;
+    padding: 0 auto 0 auto;
+    
+
+    background-image:url("images/p1.jpg"); 
+     
+     background-size: auto;
+     background-repeat: no-repeat; 
+     /* background: height 2000px;; */
+    
+     margin-top: -124px;
+     margin-left: -7px;
+     
+
+}
+.driver{
+    
+
+
+    background-image:url("./images/driver\ \(2\).jpg"); 
+    
+    background-size: auto; 
+    background-repeat: no-repeat;
+    margin-left: -8px; 
+    margin-top: 0px; 
+    color: white;
+    padding: 647px;
+    font-size: 50px;
+    
+    
+}
+
+
+
+
+
+
+ .passenger{ 
+
+    
+    background-image:url("images/pass3.jpg") ;
+    width: 33vw;
+    height: 50vh;
+    background-size: 3000px;
+    background-repeat: no-repeat;
+    margin-left: -8px; 
+    margin-top: -608px; 
+    color: white;
+    padding: 647px;
+    font-size: 62px;
+} 
+
+
+button:hover {
+    
+    color: white;
+    font-size: 65px;
+  border-radius: 20px;
+  padding: 0 16px;
+  cursor: pointer;
+  transition: all 0.9s ease-in-out;
+  }
+
+  button{
+
+    font-weight: lighter;
+    padding: 4px;
+    font-size: 60px;
+    background-color: transparent;
+    color:white;
+    border-color: white;
+    border-width: 3px;
+    border-radius: 20px;
+    margin-left: 100px;
+
+
+}
+.base1{
+    padding-left: 45px;
+    background-color: black;
+    width: 1900px;
+    height : 600px;
+    font-size: 26px;
+    color:white;
+    text-align: justify;
+    margin-top: -208px;
+    display: flex;
+    
+    
+    column-gap: 200px;
+}
+
+.auto{
+    height: 400px;
+    float: left;
+
+
+}
+
+.containter h1{
+    position: relative;
+    top: 150px;
+}
+
+
+
+
+.base-center{
+
+
+padding: 20px;
+
+
+}
