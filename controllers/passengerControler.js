@@ -9,7 +9,7 @@ module.exports.index = (req, res, next) => {
     });
   });
 
-  // res.render('passengerHome')
+  
 };
 module.exports.create = (req, res, next) => {
   res.render("passenger-create");

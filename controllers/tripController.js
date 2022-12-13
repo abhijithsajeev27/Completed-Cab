@@ -5,6 +5,7 @@ const Trip = require("../model/models").Trip;
 const fare = require("./mapController").fare;
 const map = require("../model/map").map;
 
+
 module.exports.index = (req, res, next) => {
   Trip.findAll().then((cabs) => {
     res.render("trip-Detail", {
@@ -27,8 +28,8 @@ module.exports.createPost = (req, res, next) => {
     destination: req.body.destination,
     time: req.body.time,
     mode: req.body.mode,
-    PassengerId: req.session.loggedPassenger,
-
+    PassengerId:req.session.userId,
+    DriverId :2,
     bookingdate: formatDate(new Date(), "yyyy/MM/dd"),
   }).then((user) => {
     let source = req.body.source;
@@ -43,7 +44,8 @@ module.exports.createPost = (req, res, next) => {
       .then((farefromdb) => {
         console.log(farefromdb);
         // return res.json(farefromdb);
-        res.render('payment',{data:farefromdb})
+        res.redirect('http://localhost/driver/select/')
+        // res.render('payment',{data:farefromdb})
       });
   });
 };
@@ -66,8 +68,10 @@ module.exports.updatePost = async (req, res, next) => {
       destination: req.body.destination,
       date: req.body.date,
       time: req.body.time,
-      PassengerId: req.body.PassengerId,
+      PassengerId: req.session.userId,
+      // PassengerId: req.body.PassengerId,
       bookingdate: new Date().getda,
+      
     },
     {
       where: { id: req.params.id },
@@ -88,3 +92,12 @@ module.exports.delete = async (req, res, next) => {
     res.redirect("/trip/");
   }
 };
+module.exports.receiptPrinting = async(req,res,next)=>{
+  res.render("bookingConfirmation")
+}
+module.exports.createInvoice=(req,res)=>{
+  const data={source,destination,bookingFare}=req.session;
+  console.log(data)
+  res.render('invoice',{data:data});
+}
+

@@ -17,7 +17,7 @@
   crossorigin="anonymous"
 >
 </script>
-
+<body>
 <h1>Booking confirmed</h1>
 
 <div class="container">
@@ -43,9 +43,34 @@
       {{!-- <td>{{this.dataValues.password}}</td> --}}
       <td>
 
-
+        <td > <a name="" id="" class="btn btn-primary" href="/invoice" role="button">Download</a></td>
       </td>
     </tr>
     {{!-- {{/each}} --}}
   </table>
 </div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+   const button = document.getElementById('download-button');
+      button.addEventListener('click', generatePDF);
+            function generatePDF() {
+              console.log("line 59")
+              
+
+                // Choose the element that your content will be rendered to.
+
+                const element = document.getElementById('body');
+
+                // Choose the element and save the PDF for your user.
+
+                html2pdf().from(element).save();
+
+            }
+
+
+
+         
+
+        
+</script>

@@ -1,6 +1,6 @@
 // const Movie = require('../model/movie');
 //const { captureRejectionSymbol } = require("mysql2/typings/mysql/lib/Connection");
-const { Driver, Car } = require("../model/models");
+const { Driver, Car , Trip} = require("../model/models");
 
 module.exports.homepage = (req, res, next) => {
   res.render("homepage");
@@ -73,3 +73,30 @@ module.exports.delete = async (req, res, next) => {
     res.redirect("/driver/");
   }
 };
+// Selecting Driver
+module.exports.driverSelection = (req, res, next) => {
+  Driver.findAll({
+    include: Car,
+  }).then((drivers) => {
+    console.log(drivers);
+    res.render("driverSelection", {
+      data: drivers,
+      // identity: req.identity.user
+    });
+  });
+};
+
+// module.exports.driverSelectionNext = async(req, res, next) => {
+//   // var driver = await Driver.findByPk(req.params.id);
+//   // await Trip.create(
+//   //   {
+//   //     DriverId: req.body.driver.id,
+//   //   },
+//   //   {
+//   //     where: { id: req.params.id },
+//   //   }
+//   // );
+//   res.redirect("http://localhost/trip/paymentConfirmation")
+ 
+
+// };

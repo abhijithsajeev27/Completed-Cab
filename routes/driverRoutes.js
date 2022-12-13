@@ -10,5 +10,6 @@ router.post("/driver/create", driverControllers.createPost);
 router.get("/driver/update/:id", driverControllers.update);
 router.post("/driver/update/:id", driverControllers.updatePost);
 router.get("/driver/delete/:id", driverControllers.delete);
-
+router.get("/driver/select", driverControllers.driverSelection);
+// router.get("/driver/selectnext/", driverControllers.driverSelectionNext);
 module.exports = router;

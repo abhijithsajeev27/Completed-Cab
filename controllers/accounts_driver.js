@@ -19,7 +19,7 @@ module.exports.loginPost = async (req, res, next) => {
   console.log(userFromDb);
   req.session.id = userFromDb.dataValues.id;
 
-  res.redirect("/driver");
+  res.render("driverHome");
 };
 
 module.exports.register = (req, res, next) => {

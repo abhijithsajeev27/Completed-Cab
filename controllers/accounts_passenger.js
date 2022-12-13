@@ -9,8 +9,8 @@ module.exports.loginPost = async (req, res, next) => {
   const loggedPassenger = await passenger.findOne({
     where: { email: email, password: password },
   });
- 
-  console.log("line 13",req.session.loggedPassenger);
+
+  console.log("line 13", req.session.loggedPassenger);
 
   if (loggedPassenger == null) {
     return res.render("passengerLogin", {
@@ -18,11 +18,12 @@ module.exports.loginPost = async (req, res, next) => {
     });
   }
 
-  req.session.id = loggedPassenger.id;
-  // console.log(userFromDb);
-  
+  req.session.userId = loggedPassenger.id;
 
-  res.redirect("/trip/create/");
+
+
+  // res.redirect("/trip/create/");
+  res.render("passengerHome");
 };
 
 module.exports.register = (req, res, next) => {
@@ -36,6 +37,7 @@ module.exports.registerPost = async (req, res, next) => {
       email: email,
     },
   });
+  
 
   if (existingUser) {
     return res.render("register", { message: "Already registered." });
@@ -48,6 +50,6 @@ module.exports.registerPost = async (req, res, next) => {
     phone: phone,
     password: password,
   });
-
+ 
   res.redirect("/passenger/login");
 };

@@ -34,7 +34,7 @@ app.use(
 
 
 // app.use(dr)
-// app.use(middlewearWorking);
+app.use(middlewearWorking);
 app.use(passengerRoutes);
 app.use(driverRoutes);
 app.use(cabRoutes);
